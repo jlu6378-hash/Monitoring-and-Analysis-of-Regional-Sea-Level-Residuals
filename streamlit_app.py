@@ -59,7 +59,7 @@ def get_observed_hourly_window(station_id, start_date, end_date, datum):
     # Resample to hourly to match NOAA hourly predictions
     hourly = (
         df.set_index("t")["v"]
-          .resample("H")
+          .resample("h")
           .mean()
           .dropna()
           .reset_index()
